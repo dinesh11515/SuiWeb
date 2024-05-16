@@ -35,8 +35,6 @@ async fn run_sui_build() -> Result<CommandOutput, String> {
         .arg("move")
         .arg("build")
         .arg("--dump-bytecode-as-base64")
-        .arg("--path")
-        .arg("/Users/dinesh/Desktop/Dinesh/my_first_package")
         .output()
         .expect("Failed to execute `sui build`");
     let stdout =

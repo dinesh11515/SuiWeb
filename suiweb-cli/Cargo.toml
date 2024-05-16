@@ -2,6 +2,11 @@
 name = "suiweb"
 version = "0.1.0"
 edition = "2021"
+authors = ["Dinesh dineshaitham2@gmail.com"]
+description = "A Rust Crate for suiweb"
+keywords = ["suiweb", "sui","move"]
+license = "ISC"
+documentaion="https://github.com/dinesh11515/SuiWeb"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
