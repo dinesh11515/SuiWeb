@@ -1,5 +1,5 @@
 [package]
-name = "suiweb-cli"
+name = "suiweb"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +7,6 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.4", features = ["derive"] }
+dotenv = "0.15.0"
+pinata-sdk = "1.1.0"
 tokio = { version = "1.37.0", features = ["full"] }

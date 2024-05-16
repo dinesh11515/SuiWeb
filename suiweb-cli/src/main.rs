@@ -3,10 +3,11 @@ mod args;
 mod publish;
 use crate::publish::publish::publish;
 use args::*;
+use dotenv::dotenv;
 
 #[tokio::main]
 async fn main() {
-    // let todo: Todo = Todo::new().expect("err");
+    dotenv().ok();
 
     // println!("{:?}", todo.todo_path);
     let args = Args::parse();
