@@ -1,18 +1,21 @@
 use pinata_sdk::{PinByJson, PinataApi};
-use std::env;
 use std::process::Command;
 use std::str;
 
 pub async fn publish() {
-    let api_key = env::var("API_KEY").expect("");
-    let secret_api_key = env::var("SECRET_API_KEY").expect("");
+    // let api_key = env::var("API_KEY").expect("");
+    // let secret_api_key = env::var("SECRET_API_KEY").expect("");
 
     match run_sui_build().await {
         Ok(output) => {
             if !output.stderr.is_empty() {
                 println!("{}", output.stderr);
             }
-            let api = PinataApi::new(api_key, secret_api_key).unwrap();
+            let api = PinataApi::new(
+                "08f28b57be9fbbed14bb",
+                "7f158f7f507cfc4b3e66a2afaffea67c79eee8d2374b0a6ba2e4661ef001d4d9",
+            )
+            .unwrap();
             let result = api.pin_json(PinByJson::new(output.stdout)).await;
 
             match result {
