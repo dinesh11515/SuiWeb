@@ -7,7 +7,6 @@ import { SuiClientProvider, WalletProvider } from "@mysten/dapp-kit";
 import { getFullnodeUrl } from "@mysten/sui.js/client";
 const networks = {
   devnet: { url: getFullnodeUrl("devnet") },
-  mainnet: { url: getFullnodeUrl("mainnet") },
 };
 const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
