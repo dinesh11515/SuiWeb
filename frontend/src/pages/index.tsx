@@ -55,7 +55,7 @@ export default function Home() {
                   className="mt-10 px-6 py-3 bg-blue-300 rounded-xl text-lg font-bold tracking-wider hover:bg-blue-400"
                   onClick={() => window.open("https://crates.io/crates/suiweb")}
                 >
-                  Crate
+                  CLI
                 </button>
               </div>
             </div>
