@@ -12,9 +12,7 @@ export default function Deploy() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [started, setStarted] = useState(false);
-  const [packageId, setPackageId]: any = useState(
-    "0x02224680775b8a5e493d61a6d353a79e061c6cef3e0de31265d991e2e53bdf8b"
-  );
+  const [packageId, setPackageId]: any = useState();
   const [data, setData]: any = useState();
   const { hash } = router.query;
   const account = useCurrentAccount();
@@ -84,7 +82,8 @@ export default function Deploy() {
   return (
     <div className="min-h-screen flex flex-col">
       {" "}
-      <div className="flex justify-end w-full px-10 py-5">
+      <div className="flex justify-end w-full px-10 py-5 items-center gap-5">
+        <p className=" rounded-md font-bold">Only On Devnet</p>
         <ConnectButton />
       </div>
       <div className="flex-grow flex flex-col items-center mt-60">
@@ -134,7 +133,9 @@ export default function Deploy() {
               ) : (
                 <div className="flex flex-col items-center gap-5">
                   {account != null ? (
-                    <div></div>
+                    <div className="text-xl text-gray-300">
+                      Click this button to publish your package on sui devnet
+                    </div>
                   ) : (
                     <div className="text-xl text-gray-300">
                       Connect your wallet to Publish
