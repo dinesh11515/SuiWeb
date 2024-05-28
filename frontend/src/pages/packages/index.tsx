@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Moveai() {
+export default function Deploy() {
   return (
     <div className="flex flex-col  items-center ">
       <nav className="mx-8 px-8 py-4 my-3 flex  items-center bg-[#c0e8f7] rounded-full w-full max-w-[1516px] relative">

@@ -7,7 +7,7 @@ import {
 } from "@mysten/dapp-kit";
 import { useEffect, useState } from "react";
 import { TransactionBlock } from "@mysten/sui.js/transactions";
-import { OwnedObjectRef } from "@mysten/sui.js/client";
+import Link from "next/link";
 export default function Deploy() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -80,22 +80,25 @@ export default function Deploy() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hash]);
   return (
-    <div className="min-h-screen flex flex-col">
-      <nav className="mx-8 px-8 py-4 my-3 flex  items-center bg-[#c0e8f7] rounded-full w-full max-w-[1516px]">
-        <p className="font-[Acme] text-[30px] tracking-wider absolute">
+    <div className="min-h-screen flex flex-col items-center">
+      <nav className="mx-8 px-8 py-4 my-3 flex justify-between items-center bg-[#c0e8f7] rounded-full w-full max-w-[1516px] relative">
+        <Link
+          className="font-[Acme] text-[30px] tracking-wider absolute"
+          href={"/"}
+        >
           SuiWeb
-        </p>
-        <div className="flex flex-col items-center w-full">
+        </Link>
+        <div className="flex flex-col items-center  w-full ">
           <div className="font-[Acme] text-[22px] tracking-wider flex gap-10  items-center">
-            <p>Move AI</p>
-            <p>Deploy</p>
+            <Link href={"/moveai"}>Move AI</Link>
+            <Link href={"/packages"}>Packages</Link>
           </div>
         </div>
+        <div className="flex   items-center gap-5 absolute right-[26px]">
+          <p className=" rounded-md font-bold">Only On Devnet</p>
+          <ConnectButton />
+        </div>
       </nav>{" "}
-      <div className="flex justify-end w-full px-10 py-5 items-center gap-5">
-        <p className=" rounded-md font-bold">Only On Devnet</p>
-        <ConnectButton />
-      </div>
       <div className="flex-grow flex flex-col items-center mt-60">
         {loading ? (
           <div className="flex flex-col items-center">
@@ -143,11 +146,11 @@ export default function Deploy() {
               ) : (
                 <div className="flex flex-col items-center gap-5">
                   {account != null ? (
-                    <div className="text-xl text-gray-300">
+                    <div className="text-xl ">
                       Click this button to publish your package on sui devnet
                     </div>
                   ) : (
-                    <div className="text-xl text-gray-300">
+                    <div className="text-xl ">
                       Connect your wallet to Publish
                     </div>
                   )}

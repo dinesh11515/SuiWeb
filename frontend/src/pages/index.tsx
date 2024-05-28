@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,15 +9,26 @@ export default function Home() {
   const router = useRouter();
   return (
     <div className="flex flex-col  items-center ">
-      <nav className="mx-8 px-8 py-4 my-3 flex  items-center bg-[#c0e8f7] rounded-full w-full max-w-[1516px]">
-        <p className="font-[Acme] text-[30px] tracking-wider absolute">
+      <nav className="mx-8 px-8 py-4 my-3 flex  items-center bg-[#c0e8f7] rounded-full w-full max-w-[1516px] relative">
+        <Link
+          className="font-[Acme] text-[30px] tracking-wider absolute"
+          href={"/"}
+        >
           SuiWeb
-        </p>
-        <div className="flex flex-col items-center w-full">
+        </Link>
+        <div className="flex flex-col items-center  w-full ">
           <div className="font-[Acme] text-[22px] tracking-wider flex gap-10  items-center">
-            <p>Move AI</p>
-            <p>Deploy</p>
+            <Link href={"/moveai"}>Move AI</Link>
+            <Link href={"/packages"}>Packages</Link>
           </div>
+        </div>
+        <div className=" absolute right-[26px]">
+          <button
+            className="bg-white rounded-xl w-32 px-3 py-2 font-[Roboto] font-bold text-[16px] tracking-wider hover:bg-gray-200"
+            onClick={() => window.open("https://crates.io/crates/suiweb")}
+          >
+            Install CLI
+          </button>
         </div>
       </nav>
       <div className="mt-10 w-full  max-w-[1516px] flex flex-col  items-center gap-10">
@@ -49,7 +61,7 @@ export default function Home() {
                   className="mt-10 px-6 py-3 bg-blue-300 rounded-xl text-lg font-bold tracking-wider hover:bg-blue-400"
                   onClick={() => router.push("/deploy")}
                 >
-                  Deploy
+                  Packages
                 </button>
                 <button
                   className="mt-10 px-6 py-3 bg-blue-300 rounded-xl text-lg font-bold tracking-wider hover:bg-blue-400"
