@@ -28,3 +28,7 @@ body {
     text-wrap: balance;
   }
 }
+#scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
