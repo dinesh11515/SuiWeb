@@ -1,6 +1,6 @@
 [package]
 name = "suiweb"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 authors = ["Dinesh dineshaitham2@gmail.com"]
 description = "A Rust Crate for suiweb"
