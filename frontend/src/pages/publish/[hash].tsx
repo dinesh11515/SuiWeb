@@ -103,7 +103,7 @@ export default function Deploy() {
         {loading ? (
           <div className="flex flex-col items-center">
             <svg
-              className="animate-spin  h-10 w-9 text-white"
+              className="animate-spin  h-10 w-9 text-black"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -122,8 +122,8 @@ export default function Deploy() {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
-            <p className="text-[14px] mt-4 text-gray-200 animate-pulse">
-              Fetching data from pinata...
+            <p className="text-[14px] mt-4 text-black animate-pulse">
+              Fetching data from IPFS...
             </p>
           </div>
         ) : (
