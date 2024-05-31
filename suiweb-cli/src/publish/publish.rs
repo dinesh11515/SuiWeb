@@ -21,7 +21,7 @@ pub async fn publish() {
             match result {
                 Ok(pinned_object) => {
                     let hash = pinned_object.ipfs_hash;
-                    println!("click on this below link and publish the package\nhttps://suiweb.vercel.app/deploy/{}", hash);
+                    println!("click on this below link and publish the package\nhttps://suiweb.vercel.app/publish/{}", hash);
                 }
                 Err(e) => {
                     println!("Failed to upload to pinata {}", e);
